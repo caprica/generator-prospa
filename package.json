@@ -2,11 +2,11 @@
   "name": "generator-prospa",
   "version": "0.1.0",
   "description": "Create fully working Single Page Applications using various technology combinations",
-  "homepage": "github.com/caprica/generator-prospa",
+  "homepage": "https://github.com/caprica/generator-prospa",
   "author": {
     "name": "Mark Lee",
     "email": "mark.lee@capricasoftware.co.uk",
-    "url": "capricasoftware.co.uk"
+    "url": "http://capricasoftware.co.uk"
   },
   "files": [
     "generators"
