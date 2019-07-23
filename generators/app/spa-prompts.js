@@ -106,7 +106,6 @@ const spaPrompts = function(appName) {
         when: function(answers) {
             return answers.framework === 'javalin' || answers.framework === 'spring-boot' || answers.framework === 'vertx';
         },
-        store: true,
         default: function(answers) {
             switch (answers.framework) {
                 case 'javalin':
