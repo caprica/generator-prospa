@@ -1,4 +1,7 @@
         <!-- Library dependencies -->
+<% if (language === 'scala' && (framework === 'spring-boot' || framework === 'spring-mvc')) { -%>
+        <findbugs.version>3.0.2</findbugs.version>
+<% } -%>
 <% if (framework === 'javalin' || framework === 'spring-mvc') { -%>
         <jackson.version><%= versions.dependencies.jackson %></jackson.version>
 <% } -%>
