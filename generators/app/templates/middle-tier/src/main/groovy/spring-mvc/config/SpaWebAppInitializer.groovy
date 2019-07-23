@@ -1,12 +1,12 @@
-package <%= packageName %>.config;
+package <%= packageName %>.config
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
+import javax.servlet.ServletContext
+import javax.servlet.ServletException
+import javax.servlet.ServletRegistration
 
-import org.springframework.web.WebApplicationInitializer;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.WebApplicationInitializer
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+import org.springframework.web.servlet.DispatcherServlet
 
 /**
  * Automatic initialisation class for our application.
@@ -27,27 +27,27 @@ import org.springframework.web.servlet.DispatcherServlet;
  * </ul>
  * The names for the path prefixes used here are arbitrary and can be changed to whatever you prefer.
  */
-public class SpaWebAppInitializer implements WebApplicationInitializer {
+class SpaWebAppInitializer implements WebApplicationInitializer {
 
     // Name for the servlet, does not really matter what it is
-    private static final String SERVLET_NAME = "app";
+    private static final String SERVLET_NAME = "app"
 
     // Map the SpringMVC servlet to the default context root
-    private static final String SERVLET_MAPPING = "/";
+    private static final String SERVLET_MAPPING = "/"
 
     @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
+    void onStartup(ServletContext servletContext) throws ServletException {
         // Create an application context using our configuration class
-        AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        context.setServletContext(servletContext);
-        context.register(SpaWebAppConfiguration.class);
-        context.refresh();
+        AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext()
+        context.setServletContext(servletContext)
+        context.register(SpaWebAppConfiguration.class)
+        context.refresh()
 
         // Create and register the SpringMVC dispatcher servlet
-        DispatcherServlet servlet = new DispatcherServlet(context);
-        ServletRegistration.Dynamic registration = servletContext.addServlet(SERVLET_NAME, servlet);
-        registration.setLoadOnStartup(1);
-        registration.addMapping(SERVLET_MAPPING);
+        DispatcherServlet servlet = new DispatcherServlet(context)
+        ServletRegistration.Dynamic registration = servletContext.addServlet(SERVLET_NAME, servlet)
+        registration.setLoadOnStartup(1)
+        registration.addMapping(SERVLET_MAPPING)
     }
 
 }

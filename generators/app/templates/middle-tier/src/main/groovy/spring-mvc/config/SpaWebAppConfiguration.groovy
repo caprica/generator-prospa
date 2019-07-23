@@ -26,10 +26,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
     "<%= packageName %>.service",
     "<%= packageName %>.repository"
 })
-public class SpaWebAppConfiguration implements WebMvcConfigurer {
+class SpaWebAppConfiguration implements WebMvcConfigurer {
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    void addResourceHandlers(ResourceHandlerRegistry registry) {
         // Cache control is NOT set here in this example project, but will likely be useful in a real application
 
         // It might still be handy to route to a static assets directory on the server (e.g. for images, or scripts or
@@ -59,8 +58,7 @@ public class SpaWebAppConfiguration implements WebMvcConfigurer {
         registry.setOrder(-1000);
     }
 
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
+    void addViewControllers(ViewControllerRegistry registry) {
         // We do not have a redirect here from "index.html" to "/" for two reasons:
         //  1. the resource handlers now by design have higher priority than the view controllers, so the "/index.html"
         //     mapping in the resource handlers will override any "/index.html" mapping here
@@ -77,4 +75,5 @@ public class SpaWebAppConfiguration implements WebMvcConfigurer {
         //  matter, but it must be higher than the corresponding resource registry order)
         registry.setOrder(1000);
     }
+
 }
