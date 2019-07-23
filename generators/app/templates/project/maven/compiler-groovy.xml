@@ -7,7 +7,7 @@
                         <indy/>
                         <configScript>config.groovy</configScript>
                     </compilerArguments>
-<% if (javaVersion > 9) { -%>
+<% if (javaVersion >= 9) { -%>
                     <source><%= javaVersion %></source>
                     <target><%= javaVersion %></target>
 <% } else {-%>

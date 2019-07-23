@@ -3,7 +3,11 @@
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${kotlin.version}</version>
                 <configuration>
+<% if (javaVersion >= 9) { -%>
+                    <jvmTarget><%= javaVersion %></jvmTarget>
+<% } else {-%>
                     <jvmTarget>1.<%= javaVersion %></jvmTarget>
+<% } -%>
                 </configuration>
                 <executions>
                     <execution>
