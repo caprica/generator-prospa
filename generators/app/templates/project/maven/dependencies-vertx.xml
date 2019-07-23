@@ -7,3 +7,11 @@
             <artifactId>vertx-junit5</artifactId>
             <scope>test</scope>
         </dependency>
+<%_ if (language === 'groovy') { -%>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <classifier>indy</classifier>
+            <version>${groovy.version}</version>
+        </dependency>
+<%_ } -%>

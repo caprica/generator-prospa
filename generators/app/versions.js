@@ -3,6 +3,7 @@
 const versions = {
 
     languages: {
+        groovy    : '2.5.6',
         kotlin    : '1.3.41',
         scala     : '2.13.0'
     },

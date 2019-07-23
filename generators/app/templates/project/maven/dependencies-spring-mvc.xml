@@ -29,6 +29,14 @@
             <version>${kotlin.version}</version>
         </dependency>
 <% } -%>
+<%_ if (language === 'groovy') { -%>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <classifier>indy</classifier>
+            <version>${groovy.version}</version>
+        </dependency>
+<%_ } -%>
 <%_ if (language === 'scala') { -%>
         <dependency>
             <groupId>org.scala-lang</groupId>

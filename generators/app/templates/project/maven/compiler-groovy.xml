@@ -1,0 +1,31 @@
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <compilerId>groovy-eclipse-compiler</compilerId>
+                    <compilerArguments>
+                        <indy/>
+                        <configScript>config.groovy</configScript>
+                    </compilerArguments>
+<% if (javaVersion > 9) { -%>
+                    <source><%= javaVersion %></source>
+                    <target><%= javaVersion %></target>
+<% } else {-%>
+                    <source>1.<%= javaVersion %></source>
+                    <target>1.<%= javaVersion %></target>
+<% } -%>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-compiler</artifactId>
+                        <version>3.3.0-01</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-batch</artifactId>
+                        <version>2.5.6-01</version>
+                    </dependency>
+                </dependencies>
+            </plugin>

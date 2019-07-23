@@ -1,5 +1,5 @@
         <!-- Core Maven plugins -->
-<% if (language === 'java') { -%>
+<% if (language === 'java' || language === 'groovy') { -%>
         <maven-compiler-plugin.version><%= versions.mavenPlugins.compiler %></maven-compiler-plugin.version>
 <% } -%>
         <maven-resources-plugin.version><%= versions.mavenPlugins.resources %></maven-resources-plugin.version>

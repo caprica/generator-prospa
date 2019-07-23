@@ -17,6 +17,14 @@
             <version>3.0.2</version>
         </dependency>
 <%_ } -%>
+<%_ if (language === 'groovy') { -%>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <classifier>indy</classifier>
+            <version>${groovy.version}</version>
+        </dependency>
+<%_ } -%>
 <%_ if (language === 'kotlin') { -%>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>

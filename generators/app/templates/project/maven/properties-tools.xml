@@ -1,4 +1,7 @@
         <!-- Tools/SDKs -->
+<% if (language === 'groovy') { -%>
+        <groovy.version><%= versions.languages.groovy %></groovy.version>
+<% } -%>
 <% if (language === 'kotlin') { -%>
         <kotlin.version><%= versions.languages.kotlin %></kotlin.version>
 <% } -%>

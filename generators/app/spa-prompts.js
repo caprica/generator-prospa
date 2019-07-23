@@ -38,6 +38,8 @@ const spaPrompts = function(appName) {
             name: 'Kotlin', value: 'kotlin'
         },{
             name: 'Scala', value: 'scala'
+        },{
+            name: 'Groovy', value: 'groovy'
         }],
         default: 'java'
     },{

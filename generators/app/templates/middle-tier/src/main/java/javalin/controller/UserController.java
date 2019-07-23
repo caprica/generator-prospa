@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import <%= packageName %>.domain.User;
-import <%= packageName %>.repository.MemoryUserRepository;
 import <%= packageName %>.service.UserService;
 import <%= packageName %>.service.UserServiceImpl;
 
