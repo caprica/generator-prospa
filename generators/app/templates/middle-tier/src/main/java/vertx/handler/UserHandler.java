@@ -6,7 +6,7 @@ import io.vertx.ext.web.RoutingContext;
 /**
  * Handler implementations for dealing with Users.
  */
-public class UsersHandler {
+public class UserHandler {
 
     private static final String CONTENT_TYPE_HEADER = "Content-Type";
 
