@@ -1,0 +1,49 @@
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+<%_ if (language === 'scala') { -%>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-scala_2.13</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <!--
+            This dependency is used to clear the following Scala compiler warning:
+
+            "Warning:scalac: While parsing annotations in <...>, could not find MAYBE in enum <none>. This is likely
+             due to an implementation restriction: an annotation argument cannot refer to a member of the annotated
+             class (scala/bug#7014)"
+         -->
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+<%_ } -%>
+<%_ if (language === 'kotlin') { -%>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+<% } -%>
+<%_ if (language === 'scala') { -%>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+<%_ } -%>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>

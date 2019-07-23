@@ -1,0 +1,14 @@
+        <!-- Library dependencies -->
+<% if (framework === 'javalin' || framework === 'spring-mvc') { -%>
+        <jackson.version><%= versions.dependencies.jackson %></jackson.version>
+<% } -%>
+<% if (framework === 'javalin') { -%>
+        <javalin.version><%= versions.dependencies.javalin %></javalin.version>
+        <slf4j.version><%= versions.dependencies.slf4j %></slf4j.version>
+<% } -%>
+<% if (framework === 'spring-mvc') { -%>
+        <spring.version><%= versions.dependencies.spring %></spring.version>
+<% } -%>
+<% if (framework === 'vertx') { -%>
+        <vertx.version><%= versions.dependencies.vertx %></vertx.version>
+<% } -%>

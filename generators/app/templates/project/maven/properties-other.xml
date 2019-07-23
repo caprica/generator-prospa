@@ -1,0 +1,6 @@
+        <!-- General -->
+        <frontend.app.dir>${project.basedir}/src/main/app</frontend.app.dir>
+<% if (framework === 'javalin' || framework === 'vertx') { -%>
+        <main.class><%= packageName %>.<%= mainClassName %></main.class>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<% } -%>

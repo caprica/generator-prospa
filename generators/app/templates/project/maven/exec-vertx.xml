@@ -1,0 +1,12 @@
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec-maven-plugin.version}</version>
+                <configuration>
+                    <mainClass>io.vertx.core.Launcher</mainClass>
+                    <arguments>
+                        <argument>run</argument>
+                        <argument>${main.class}</argument>
+                    </arguments>
+                </configuration>
+            </plugin>

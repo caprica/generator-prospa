@@ -1,0 +1,9 @@
+        <!-- Tools/SDKs -->
+<% if (language === 'kotlin') { -%>
+        <kotlin.version><%= versions.languages.kotlin %></kotlin.version>
+<% } -%>
+<% if (language === 'scala') { -%>
+        <scala.version><%= versions.languages.scala %></scala.version>
+<% } -%>
+        <node.version><%= versions.frontEnd.node %></node.version>
+        <yarn.version><%= versions.frontEnd.yarn %></yarn.version>

@@ -1,0 +1,7 @@
+<% if (framework === 'spring-boot') { %>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version><%= versions.dependencies.springBoot %></version>
+    </parent>
+<% } -%>

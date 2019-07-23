@@ -1,0 +1,8 @@
+        <!-- Core Maven plugins -->
+<% if (language === 'java') { -%>
+        <maven-compiler-plugin.version><%= versions.mavenPlugins.compiler %></maven-compiler-plugin.version>
+<% } -%>
+        <maven-resources-plugin.version><%= versions.mavenPlugins.resources %></maven-resources-plugin.version>
+<% if (framework === 'spring-mvc') { -%>
+        <maven-war-plugin.version><%= versions.mavenPlugins.war %></maven-war-plugin.version>
+<% } -%>

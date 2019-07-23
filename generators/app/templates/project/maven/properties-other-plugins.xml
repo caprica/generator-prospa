@@ -1,0 +1,11 @@
+        <!-- Other Maven plugins -->
+<% if (framework === 'javalin' || framework === 'vertx') { -%>
+        <exec-maven-plugin.version><%= versions.mavenPlugins.exec %></exec-maven-plugin.version>
+<% } -%>
+        <frontend-maven-plugin.version><%= versions.mavenPlugins.frontend %></frontend-maven-plugin.version>
+<% if (framework === 'spring-mvc') { -%>
+        <jetty-maven-plugin.version><%= versions.mavenPlugins.jetty %></jetty-maven-plugin.version>
+<% } -%>
+<% if (language === 'scala') { -%>
+        <scala-maven-plugin.version><%= versions.mavenPlugins.scala %></scala-maven-plugin.version>
+<% } -%>

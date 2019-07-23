@@ -1,0 +1,14 @@
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+<% if (javaVersion >= 9) { -%>
+                    <release><%= javaVersion %></release>
+<% } else {-%>
+                    <source>1.<%= javaVersion %></source>
+                    <target>1.<%= javaVersion %></target>
+<% } -%>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>

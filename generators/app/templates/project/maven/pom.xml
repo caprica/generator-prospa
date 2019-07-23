@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--
+            Language: <%= language %>
+        Java Version: <%= javaVersion %>
+           Framework: <%= framework %>
+                  UI: <%= frontEnd %>
+     -->
+
+    <modelVersion>4.0.0</modelVersion>
+<%- include('parent.xml'); %>
+    <groupId><%= groupId %></groupId>
+    <artifactId><%= name %></artifactId>
+    <version><%= projectVersion %></version>
+<%- include('packaging.xml'); %>
+    <description><%= description %></description>
+
+    <inceptionYear><%= year %></inceptionYear>
+
+    <!--
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/[pending]/<%= name %>/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git@github.com:[pending]/<%= name %>.git</connection>
+        <developerConnection>scm:git:git@github.com:[pending]/<%= name %>.git</developerConnection>
+        <url>git@github.com:[pending]/<%= name %>.git</url>
+        <tag>HEAD</tag>
+    </scm>
+    -->
+
+    <properties>
+<%- include('properties-maven-plugins.xml'); %>
+<%- include('properties-other-plugins.xml'); %>
+<%- include('properties-dependencies.xml'); %>
+<%- include('properties-tools.xml'); %>
+<%- include('properties-other.xml'); %>
+    </properties>
+<%- include('dependency-management.xml'); %>
+    <dependencies>
+<%- include(`dependencies-${framework}.xml`); -%>
+    </dependencies>
+
+    <build>
+<% if (language != 'java') { -%>
+        <sourceDirectory>${project.basedir}/src/main/<%= language %></sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/<%= language %></testSourceDirectory>
+<% } -%>
+        <plugins>
+<%- include(`compiler-${language}.xml`); -%>
+<%- include('war.xml'); -%>
+<%- include('frontend.xml'); -%>
+<%- include('resources.xml'); -%>
+<%- include(`exec-${framework}.xml`); -%>
+        </plugins>
+    </build>
+
+</project>
