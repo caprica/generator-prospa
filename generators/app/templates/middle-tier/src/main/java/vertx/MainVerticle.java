@@ -1,4 +1,4 @@
-package <%= packageName %>.spa;
+package <%= packageName %>;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
