@@ -1,5 +1,7 @@
 'use strict';
 
+// FIXME currently i allow to specify main class name, but i don't rename the storage file for it
+
 const Generator  = require('yeoman-generator');
 const chalk      = require('chalk');
 const yosay      = require('yosay');
@@ -23,6 +25,27 @@ const FRONT_END_RESOURCE_DIR = {
     "angular": "",
     "vue"    : "/app"
 };
+
+const ext = {
+    "java"  : "java",
+    "kotlin": "kt",
+    "scala" : "scala",
+    "groovy": "groovy"
+}
+
+function getMainArtifactSource(framework, language) {
+    if (framework == 'javalin' || framework == 'spring-boot') {
+        return `Application.${ext[language]}`;
+    } else if (framework == 'vertx') {
+        return `MainVerticle.${ext[language]}`;
+    } else {
+        return null;
+    }
+}
+
+function getMainArtifactDest(name, language) {
+    return `${name}.${ext[language]}`;
+}
 
 module.exports = class extends Generator {
 
@@ -90,7 +113,6 @@ module.exports = class extends Generator {
 
         if (this.props.framework === 'spring-mvc') {
             const webappPath = `src/main/webapp`;
-            this.log(`making dir ${webappPath}/WEB-INF`);
             mkdirp.sync(this.destinationPath(`${webappPath}/WEB-INF`));
             this.fs.copy(this.templatePath('.gitkeep'), this.destinationPath(`${webappPath}/WEB-INF/.gitkeep`));
         }
@@ -98,9 +120,18 @@ module.exports = class extends Generator {
         const packagePath = this.props.packageName.replace(/\./g, '/');
 
         this.fs.copyTpl(
-            glob.sync(this.templatePath(`middle-tier/src/main/${this.props.language}/${this.props.framework}/**/*`), { dot: true }),
+            glob.sync(this.templatePath(`middle-tier/src/main/${this.props.language}/${this.props.framework}/**/!(Application.*|MainVerticle.*)`), { dot: true }),
             this.destinationPath(`${mainSourcePath}/${packagePath}`),
             this.model);
+
+        const mainArtifactSource = getMainArtifactSource(this.props.framework, this.props.language);
+        if (mainArtifactSource) {
+            const mainArtifactDest = getMainArtifactDest(this.props.mainClassName, this.props.language);
+            this.fs.copyTpl(
+                this.templatePath(`middle-tier/src/main/${this.props.language}/${this.props.framework}/${mainArtifactSource}`),
+                this.destinationPath(`${mainSourcePath}/${packagePath}/${mainArtifactDest}`),
+                this.model);
+        }
 
         if (this.props.framework === 'spring-boot') {
             this.fs.copy(glob.sync(this.templatePath(`middle-tier/src/resources/${this.props.framework}/**/*`), { dot: true }), this.destinationPath(`${mainResourcePath}`));

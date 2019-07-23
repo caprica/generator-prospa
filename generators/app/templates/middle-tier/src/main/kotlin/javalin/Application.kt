@@ -5,7 +5,7 @@ import io.javalin.Javalin
 import <%= packageName %>.controller.UserController
 import <%= packageName %>.controller.VersionController
 
-object Application {
+object <%= mainClassName %> {
 
     @JvmStatic
     fun main(args: Array<String>) {

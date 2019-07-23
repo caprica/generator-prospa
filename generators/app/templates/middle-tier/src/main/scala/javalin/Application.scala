@@ -7,7 +7,7 @@ import io.javalin.plugin.json.JavalinJackson
 
 import <%= packageName %>.controller.{UserController, VersionController}
 
-object Application {
+object <%= mainClassName %> {
 
     def main(args: Array[String]): Unit = {
         // Explicit configuration of a Jackson ObjectMapper is required to enable JSON marshalling for Scala classes

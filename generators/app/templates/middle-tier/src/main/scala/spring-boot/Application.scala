@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping
 import <%= packageName %>.config.SpaWebAppConfiguration
 
 @SpringBootApplication
-class Application
+class <%= mainClassName %>
 
 object Main {
 
-    def main(args: Array[String]): Unit = SpringApplication.run(classOf[Application])
+    def main(args: Array[String]): Unit = SpringApplication.run(classOf[<%= mainClassName %>])
 
 }

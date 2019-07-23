@@ -5,7 +5,7 @@ import io.javalin.Javalin;
 import <%= packageName %>.controller.UserController;
 import <%= packageName %>.controller.VersionController;
 
-public class Application {
+public class <%= mainClassName %> {
 
     public static void main(String[] args) {
         Javalin app = Javalin.create()

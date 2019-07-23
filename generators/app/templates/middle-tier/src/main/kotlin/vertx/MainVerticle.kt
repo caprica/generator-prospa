@@ -9,7 +9,7 @@ import <%= packageName %>.handler.UserHandler
 import <%= packageName %>.repository.MemoryUserRepository
 import <%= packageName %>.service.UserService
 
-class MainVerticle : AbstractVerticle() {
+class <%= mainClassName %> : AbstractVerticle() {
 
     override fun start(startFuture: Future<Void>) {
         // Configure routes to handlers

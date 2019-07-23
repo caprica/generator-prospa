@@ -9,7 +9,7 @@ import <%= packageName %>.handler.UserHandler
 import <%= packageName %>.repository.MemoryUserRepository
 import <%= packageName %>.service.UserService
 
-class MainVerticle extends AbstractVerticle {
+class <%= mainClassName %> extends AbstractVerticle {
 
     @Override
     void start(Future<Void> startFuture) {

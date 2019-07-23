@@ -9,9 +9,8 @@ import <%= packageName %>.handler.UserHandler;
 import <%= packageName %>.repository.MemoryUserRepository;
 import <%= packageName %>.service.UserService;
 
-public class MainVerticle extends AbstractVerticle {
-
-    @Override
+public class <%= mainClassName %> extends AbstractVerticle {
+ %>
     public void start(Future<Void> startFuture) {
         // Configure routes to handlers
         Router router = Router.router(vertx);
