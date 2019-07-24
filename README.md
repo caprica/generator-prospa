@@ -61,7 +61,7 @@ Further documentation is coming...
 
 ## License
 
-GPL-3.0 © [Caprica Software Limited](capricasoftware.co.uk)
+GPL-3.0 © [Caprica Software Limited](http://capricasoftware.co.uk)
 
 [npm-image]: https://badge.fury.io/js/generator-prospa.svg
 [npm-url]: https://npmjs.org/package/generator-prospa
