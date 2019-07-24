@@ -61,6 +61,8 @@ Some constructs may not be 100% idiomatic for the various different JVM language
 
 Some of the generated front-end applications may not be using the latest toolchains, this will be updated shortly.
 
+Vue.js client builds are not working, this will be fixed imminently.
+
 Further documentation is coming...
 
 ## License
