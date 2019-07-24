@@ -49,11 +49,25 @@ function getMainArtifactDest(name, language) {
 
 module.exports = class extends Generator {
 
+    constructor(args, opts) {
+        super(args, opts);
+
+        this.argument("spec", { type: String, required: false });
+    }
+
     prompting() {
 
         this.log(
             yosay(`Welcome to the super-excellent ${chalk.red('generator-spa')} generator!`)
         );
+
+        if (this.options.spec) {
+            const spec = this.fs.readJSON(this.options.spec);
+            if (spec) {
+                this.props = spec;
+                return;
+            }
+        }
 
         return this.prompt(spaPrompts(this.appname)).then(props => {
             this.props = props;
