@@ -157,7 +157,9 @@ module.exports = class extends Generator {
     generateFrontEnd() {
         const appSourcePath = 'src/main/app';
 
-        this.fs.copyTpl(
+        // This is copy rather than copyTpl since VueJS uses <%= %> for its own purposes in some places - and right now
+        // we don't actually need to apply templates to the front-end artifacts (this may need to change in the future)
+        this.fs.copy(
             glob.sync(this.templatePath(`front-end/${this.props.frontEnd}/**/*`), { dot: true }),
             this.destinationPath(`${appSourcePath}`),
             this.model);
