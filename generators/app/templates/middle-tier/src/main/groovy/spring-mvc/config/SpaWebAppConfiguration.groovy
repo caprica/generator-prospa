@@ -21,11 +21,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {
+@ComponentScan(basePackages = [
     "<%= packageName %>.controller",
     "<%= packageName %>.service",
     "<%= packageName %>.repository"
-})
+])
 class SpaWebAppConfiguration implements WebMvcConfigurer {
 
     void addResourceHandlers(ResourceHandlerRegistry registry) {
