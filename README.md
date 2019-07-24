@@ -3,7 +3,7 @@
 
 ## What is it?
 
-Generate fully working Seingle Page Application projects using various combinations of front-end and middle-tier
+Generate fully working Single Page Application projects using various combinations of front-end and middle-tier
 technologies, using various JVM languages.
 
 Supported languages:
@@ -16,7 +16,7 @@ Supported languages:
 Supported front-ends:
 
  * ReactJS
- * Angular JS
+ * AngularJS
  * Vue.js
 
 Supported middle-tier:
