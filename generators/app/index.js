@@ -1,7 +1,5 @@
 'use strict';
 
-// FIXME currently i allow to specify main class name, but i don't rename the storage file for it
-
 const Generator  = require('yeoman-generator');
 const chalk      = require('chalk');
 const yosay      = require('yosay');
