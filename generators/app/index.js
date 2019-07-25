@@ -78,7 +78,7 @@ module.exports = class extends Generator {
             frontEnd           : this.props.frontEnd,
             frontEndBuildDir   : FRONT_END_BUILD_DIR[this.props.frontEnd],
             frontEndResourceDir: FRONT_END_RESOURCE_DIR[this.props.frontEnd],
-            frontEndPackageTool: 'yarn',
+            frontEndPackageTool: this.props.frontEndPackageTool,
             generatorName      : GENERATOR_NAME,
             generatorUrl       : GENERATOR_URL,
             groupId            : this.props.groupId,

@@ -92,6 +92,17 @@ const spaPrompts = function(appName) {
         }],
         default: 'react'
     },{
+        type: 'list',
+        name: 'frontEndPackageTool',
+        message: 'What is the front-end (user-interface) build/package tool for the project?',
+        store: true,
+        choices: [{
+            name: 'Yarn', value: 'yarn'
+        },{
+            name: 'npm', value: 'npm'
+        }],
+        default: 'yarn'
+    },{
         type: 'input',
         name: 'packageName',
         message: 'What is the top-level package name for your project?',

@@ -30,17 +30,18 @@ for language in "${languages[@]}" ; do
             pushd $project > /dev/null
 
             echo "{" >> $spec
-            echo "  \"groupId\"       : \"uk.co.caprica\"," >> $spec
-            echo "  \"name\"          : \"spa-test\"," >> $spec
-            echo "  \"projectVersion\": \"1.0.0-SNAPSHOT\"," >> $spec
-            echo "  \"description\"   : \"SPA $language $framework $frontend\"," >> $spec
-            echo "  \"language\"      : \"$language\"," >> $spec
-            echo "  \"javaVersion\"   : \"$javaVersion\"," >> $spec
-            echo "  \"framework\"     : \"$framework\"," >> $spec
-            echo "  \"frontEnd\"      : \"$frontend\"," >> $spec
-            echo "  \"packageName\"   : \"uk.co.caprica.spatest\"," >> $spec
-            echo "  \"mainClassName\" : \"Application\"," >> $spec
-            echo "  \"serverPort\"    : $serverPort" >> $spec
+            echo "  \"groupId\"            : \"uk.co.caprica\"," >> $spec
+            echo "  \"name\"               : \"spa-test\"," >> $spec
+            echo "  \"projectVersion\"     : \"1.0.0-SNAPSHOT\"," >> $spec
+            echo "  \"description\"        : \"SPA $language $framework $frontend\"," >> $spec
+            echo "  \"language\"           : \"$language\"," >> $spec
+            echo "  \"javaVersion\"        : \"$javaVersion\"," >> $spec
+            echo "  \"framework\"          : \"$framework\"," >> $spec
+            echo "  \"frontEnd\"           : \"$frontend\"," >> $spec
+            echo "  \"frontEndPackageTool\": \"yarn\"," >> $spec
+            echo "  \"packageName\"        : \"uk.co.caprica.spatest\"," >> $spec
+            echo "  \"mainClassName\"      : \"Application\"," >> $spec
+            echo "  \"serverPort\"         : $serverPort" >> $spec
             echo "}" >> $spec
 
             yo prospa --spec "$spec" --force

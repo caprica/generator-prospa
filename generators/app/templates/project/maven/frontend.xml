@@ -12,7 +12,7 @@
                     <execution>
                         <id>install-frontend-tools</id>
                         <goals>
-                            <goal>install-node-and-yarn</goal>
+                            <goal>install-node-and-<%= frontEndPackageTool %></goal>
                         </goals>
                     </execution>
                     <execution>
@@ -31,7 +31,7 @@
                         </goals>
                         <phase>prepare-package</phase>
                         <configuration>
-                            <arguments>build</arguments>
+                            <arguments><% if (frontEndPackageTool === 'npm') { %>run <%}%>build</arguments>
                         </configuration>
                     </execution>
                 </executions>
