@@ -11,13 +11,13 @@ public class <%= mainClassName %> {
         Javalin app = Javalin.create()
             .get("/api/users", UserController.users)
             .get("/api/users/:username", UserController.user)
-            .get("/api/*", ctx -> ctx.status(400))                // Any unmapped API will result in a 400 Bad Request
-            .get("version", VersionController.version);
+            .get("/api/version", VersionController.version)
+            .get("/api/*", ctx -> ctx.status(400));                    // Any unmapped API will result in a 400 Bad Request
 
         app.config
-            .addStaticFiles("/app")                                     // The ReactJS application
-            .addStaticFiles("/")                                        // Other static assets, external to the ReactJS application
-            .addSinglePageRoot("/", "/app/index.html");   // Catch-all route for the single-page application
+            .addStaticFiles("/app")                                    // The front-end application
+            .addStaticFiles("/")                                       // Other static assets, external to the front-end application
+            .addSinglePageRoot("/", "/app/index.html");                // Catch-all route for the single-page application
 
         app.start(<%= serverPort %>);
     }
