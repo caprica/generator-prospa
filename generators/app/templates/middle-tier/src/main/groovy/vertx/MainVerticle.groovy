@@ -6,6 +6,7 @@ import io.vertx.ext.web.Router
 import io.vertx.ext.web.handler.StaticHandler
 
 import <%= packageName %>.handler.UserHandler
+import <%= packageName %>.handler.VersionHandler
 import <%= packageName %>.repository.MemoryUserRepository
 import <%= packageName %>.service.UserService
 
@@ -19,6 +20,7 @@ class <%= mainClassName %> extends AbstractVerticle {
         // Handlers for our API services
         router.route("/api/users").handler(UserHandler.&users)
         router.route("/api/users/:username").handler(UserHandler.&user)
+        router.route("/api/version").handler(VersionHandler.&version)
 
         // Catch-all for non-existent API routes to return a Bad Request status code
         router.route("/api/*").handler({ routingContext -> routingContext.response().setStatusCode(400).end() })
