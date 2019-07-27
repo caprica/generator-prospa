@@ -63,3 +63,10 @@ Front-end Application
 ---
 
 [PENDING]
+
+Web-Services API Proxy
+---
+
+When the application is running in development mode, web-service API requests can be proxied to a development server:
+
+<%- include(`proxy-${frontEnd}.md`); -%>
