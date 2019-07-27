@@ -29,6 +29,8 @@ Supported middle-tier:
 
 Any combinations of these are possible.
 
+You can choose to use either `yarn` or `npm` as your client build and packaging tool.
+
 ## Features
 
  * Generated projects are fully ready to build and execute;
