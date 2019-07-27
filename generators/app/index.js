@@ -148,9 +148,14 @@ module.exports = class extends Generator {
         }
 
         if (this.props.framework === 'spring-boot') {
-            this.fs.copy(glob.sync(this.templatePath(`middle-tier/src/resources/${this.props.framework}/**/*`), { dot: true }), this.destinationPath(`${mainResourcePath}`));
+            this.fs.copyTpl(
+                glob.sync(this.templatePath(`middle-tier/src/resources/${this.props.framework}/**/*`), { dot: true }),
+                this.destinationPath(`${mainResourcePath}`),
+                this.model);
         } else {
-            this.fs.copy(this.templatePath('.gitkeep'), this.destinationPath(`${mainResourcePath}/.gitkeep`));
+            this.fs.copy(
+                this.templatePath('.gitkeep'),
+                this.destinationPath(`${mainResourcePath}/.gitkeep`));
         }
     }
 
