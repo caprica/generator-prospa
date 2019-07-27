@@ -17,6 +17,7 @@ Supported front-ends:
 
  * ReactJS
  * AngularJS
+ * EmberJS
  * Vue.js
 
 Supported middle-tier:
