@@ -1,0 +1,26 @@
+<h1>Users</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>username</th>
+            <th>name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this.model as |user|}}
+            <tr>
+                <td>
+                    <LinkTo @route="user" @model={{user.username}} class="App-link">{{user.username}}</LinkTo>
+                </td>
+                <td>
+                    {{user.name}}
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<br>
+
+<span><LinkTo @route="application" class="App-link">Home</LinkTo></span>

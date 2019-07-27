@@ -1,0 +1,24 @@
+<h1>User - {{this.model.username}}</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>username</th>
+            <th>name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                {{this.model.username}}
+            </td>
+            <td>
+                {{this.model.name}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<span><LinkTo @route="application" class="App-link">Home</LinkTo> | <LinkTo @route="users" class="App-link">Users</LinkTo></span>
