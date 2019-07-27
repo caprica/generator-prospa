@@ -15,12 +15,14 @@ const GENERATOR_URL = "https://github.com/caprica/spa-rktacular";
 const FRONT_END_BUILD_DIR = {
     "react"  : "/build",
     "angular": "/dist",
+    "ember"  : "/dist",
     "vue"    : "/dist"
 };
 
 const FRONT_END_RESOURCE_DIR = {
     "react"  : "/app",
     "angular": "",
+    "ember"  : "/app",
     "vue"    : "/app"
 };
 

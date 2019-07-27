@@ -88,6 +88,8 @@ const spaPrompts = function(appName) {
         },{
             name: 'AngularJS', value: 'angular'
         },{
+            name: 'EmberJS', value: 'ember'
+        },{
             name: 'Vue.js', value: 'vue'
         }],
         default: 'react'

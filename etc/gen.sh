@@ -5,7 +5,7 @@ serverPort=8080
 
 languages=( "java" "kotlin" "scala" "groovy" )
 frameworks=( "javalin" "spring-boot" "spring-mvc" "vertx" )
-frontends=( "react" "angular" "vue" )
+frontends=( "react" "angular" "ember" "vue" )
 
 rm -rf projects
 rm -rf specs
