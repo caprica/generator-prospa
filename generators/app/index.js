@@ -9,8 +9,8 @@ const glob       = require('glob');
 const spaPrompts = require('./spa-prompts');
 const versions   = require('./versions');
 
-const GENERATOR_NAME = "spa-rktacular";
-const GENERATOR_URL = "https://github.com/caprica/spa-rktacular";
+const GENERATOR_NAME = "prospa";
+const GENERATOR_URL = "https://github.com/caprica/generator-prospa";
 
 const FRONT_END_BUILD_DIR = {
     "react"  : "/build",
