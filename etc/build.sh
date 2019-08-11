@@ -2,7 +2,7 @@
 
 languages=( "java" "kotlin" "scala" "groovy" )
 frameworks=( "javalin" "spring-boot" "spring-mvc" "vertx" )
-frontends=( "react" "angular" "ember" "vue" )
+frontends=( "react" "angular" "vue" "ember")
 
 pushd projects > /dev/null
 

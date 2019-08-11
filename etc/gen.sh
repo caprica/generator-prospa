@@ -5,7 +5,7 @@ serverPort=8080
 
 languages=( "java" "kotlin" "scala" "groovy" )
 frameworks=( "javalin" "spring-boot" "spring-mvc" "vertx" )
-frontends=( "react" "angular" "ember" "vue" )
+frontends=( "react" "angular" "vue" "ember")
 
 rm -rf projects
 rm -rf specs
@@ -38,10 +38,10 @@ for language in "${languages[@]}" ; do
             echo "  \"javaVersion\"        : \"$javaVersion\"," >> $spec
             echo "  \"framework\"          : \"$framework\"," >> $spec
             echo "  \"frontEnd\"           : \"$frontend\"," >> $spec
-            echo "  \"frontEndPackageTool\": \"yarn\"," >> $spec
             echo "  \"packageName\"        : \"uk.co.caprica.spatest\"," >> $spec
             echo "  \"mainClassName\"      : \"Application\"," >> $spec
-            echo "  \"serverPort\"         : $serverPort" >> $spec
+            echo "  \"serverPort\"         : $serverPort," >> $spec
+            echo "  \"frontEndPackageTool\": \"yarn\"" >> $spec
             echo "}" >> $spec
 
             yo prospa --spec "$spec" --force
