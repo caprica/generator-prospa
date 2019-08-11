@@ -1,7 +1,5 @@
 import Route from '@ember/routing/route'
 
-// If the API server is not available, we are not getting a rejected promise, is this because we're doing it via proxy?
-
 export default Route.extend({
 
     model(params) {
@@ -11,7 +9,7 @@ export default Route.extend({
             } else {
                 throw Error(response.statusText)
             }
-        })        
+        })
     }
 
 })

@@ -9,7 +9,7 @@ export default Route.extend({
             } else {
                 throw Error(response.statusText)
             }
-        })        
+        })
     }
 
 })
