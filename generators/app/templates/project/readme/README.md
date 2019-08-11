@@ -19,7 +19,8 @@ mvn clean install
 Running the Server
 ---
 
-In a command-window, type:
+To run the "full" server, i.e. a production build of the front-end application together with the web-services API, in
+a command-window type:
 
 ```
 <%- include(`run-${framework}.md`); -%>
@@ -30,6 +31,8 @@ In a web-browser, go to:
 ```
 http://localhost:<%= serverPort %>
 ```
+
+A development server for the front-end application can be run in the usual way - this will be explained below.
 
 Routing
 ---
@@ -62,7 +65,13 @@ Any attempt to access a non-existing API path will result in a standard "HTTP 40
 Front-end Application
 ---
 
-[PENDING]
+The front-end application uses all of the usual framework toolchain, there is nothing special needed to configure or
+use the application.
+
+All of the usual front-end tools will work, including running a development version of the application, using a
+web-services API proxy, and building a client package.
+
+[PENDING framework specific instructions yarn/node serve/build etc]
 
 Web-Services API Proxy
 ---
