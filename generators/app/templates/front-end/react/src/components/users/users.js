@@ -6,7 +6,7 @@ import Page         from '../Page'
 
 import useFetchData from '../../hooks/useFetchData'
 
-function Users() {
+const Users = (props) => {
 
     // eslint-disable-next-line no-unused-vars
     const [state, dispatch] = useFetchData({
